@@ -1,0 +1,8 @@
+---
+- name: Setup Infrastructure Monitoring
+  hosts: all
+  become: true
+
+  roles:
+    - { role: client, when: "'clients' in group_names" }
+    - { role: monitoring, when: "'monitoring' in group_names" }
