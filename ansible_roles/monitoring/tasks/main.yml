@@ -1,0 +1,39 @@
+---
+- name: Install Docker
+  apt:
+    name:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      - docker-compose
+    update_cache: yes
+    state: present
+
+- name: Ensure Docker service is running
+  service:
+    name: docker
+    state: started
+    enabled: yes
+
+- name: Create monitoring directory
+  file:
+    path: /opt/monitoring
+    state: directory
+    mode: '0755'
+
+- name: Deploy Prometheus config
+  template:
+    src: prometheus.yml.j2
+    dest: /opt/monitoring/prometheus.yml
+  notify: restart monitoring stack
+
+- name: Deploy Docker Compose stack
+  template:
+    src: docker-compose-monitoring.yml.j2
+    dest: /opt/monitoring/docker-compose.yml
+  notify: restart monitoring stack
+
+- name: Run Docker Compose
+  docker_compose:
+    project_src: /opt/monitoring
+    state: present

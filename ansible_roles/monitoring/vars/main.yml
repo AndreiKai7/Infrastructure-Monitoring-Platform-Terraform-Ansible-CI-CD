@@ -1,0 +1,3 @@
+# Версии сервисов
+prometheus_version: "latest"
+grafana_version: "latest"
