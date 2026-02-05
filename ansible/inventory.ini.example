@@ -1,6 +1,7 @@
 [monitoring]
 monitoring-server ansible_host=1.2.3.4
 
+[monitoring:vars]
 grafana_admin_user: "admin"
 grafana_admin_password: "super_secret_password_123"
 
