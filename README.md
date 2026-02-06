@@ -162,7 +162,7 @@ ansible-playbook -i inventory.ini playbook.yml
 После успешного выполнения Ansible:
 
 1.  **Grafana**: Откройте в браузере `http://<MONITORING_IP>:3000`.
-    *   Логин/Пароль: тот, что вы указали в `inventory.ini` (по умолчанию `admin` / `super_secret`).
+    *   Логин/Пароль: тот, что вы указали в `inventory.ini` (по умолчанию `admin` / `super_secret_password_123`).
     *   **Datasource**: Grafana подключится к Prometheus автоматически.
 2.  **Prometheus UI**: Доступен по `http://localhost:9090` (если вы на самом сервере) или через SSH-туннель. Прямой доступ извне закрыт по соображениям безопасности (bind to 127.0.0.1).
 
