@@ -36,7 +36,7 @@ resource "yandex_vpc_security_group" "sg" {
     v4_cidr_blocks = ["0.0.0.0/0"]
     port           = 9090
   }
-  
+
   # Egress rules for updates, etc.
   egress {
     protocol       = "ANY"
@@ -100,10 +100,10 @@ resource "yandex_compute_instance" "client" {
   }
 
   network_interface {
-    subnet_id          = yandex_vpc_subnet.subnet.id
-    nat                = true
+    subnet_id = yandex_vpc_subnet.subnet.id
+    nat       = true
     # Note: In prod restrict security groups strictly
-    security_group_ids = [yandex_vpc_security_group.sg.id] 
+    security_group_ids = [yandex_vpc_security_group.sg.id]
   }
 
   metadata = {

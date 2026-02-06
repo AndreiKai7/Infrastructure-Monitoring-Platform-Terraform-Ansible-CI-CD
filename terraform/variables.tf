@@ -1,31 +1,31 @@
 variable "yc_token" {
-  description = "OAuth token или service account key" 
-  type = string
-  default = null
+  description = "OAuth token или service account key"
+  type        = string
+  default     = null
 }
 variable "yc_cloud_id" {
   type = string
 }
 variable "yc_folder_id" {
-  type = string 
+  type = string
 }
 variable "yc_zone" {
-  type = string
+  type    = string
   default = "ru-central1-a"
 }
 
 variable "ssh_public_key" {
-  type = string
+  type        = string
   description = "Путь к публичному SSH ключу"
 }
 
 # Параметры ВМ
-variable "monitoring_vm" { 
+variable "monitoring_vm" {
   type = map(object({
-    cores         = number
-    memory        = number
-    disk_size     = number
-    image_family  = string
+    cores        = number
+    memory       = number
+    disk_size    = number
+    image_family = string
   }))
   default = {
     "monitor" = {
@@ -39,10 +39,10 @@ variable "monitoring_vm" {
 
 variable "client_vm" {
   type = map(object({
-    cores         = number
-    memory        = number
-    disk_size     = number
-    image_family  = string
+    cores        = number
+    memory       = number
+    disk_size    = number
+    image_family = string
   }))
   default = {
     "client" = {

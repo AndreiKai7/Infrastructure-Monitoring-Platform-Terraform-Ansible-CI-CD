@@ -3,6 +3,3 @@ yc_cloud_id     = "xxxxxxxxxxxx"
 yc_folder_id    = "xxxxxxxxxxxx"
 yc_zone         = "ru-central1-b"
 ssh_public_key  = "~/.ssh/id_ed25519.pub"
-cores = 2
-memory = 4
-disk_size = 20
