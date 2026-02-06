@@ -51,8 +51,6 @@ jobs:
         pip install ansible ansible-lint yamllint
 
     - name: Ansible Playbook Syntax Check
-      env:
-        ANSIBLE_ROLES_PATH: ./ansible_roles
       run: ansible-playbook --syntax-check ansible/playbook.yml -i ansible/inventory.ini.example
 
     - name: Ansible Playbook Syntax Check
