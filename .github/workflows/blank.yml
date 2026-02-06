@@ -52,6 +52,3 @@ jobs:
 
     - name: Ansible Playbook Syntax Check
       run: ansible-playbook --syntax-check ansible/playbook.yml -i ansible/inventory.ini.example
-
-    - name: Ansible Playbook Syntax Check
-      run: ansible-playbook --syntax-check ansible/playbook.yml
