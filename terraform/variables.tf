@@ -1,9 +1,23 @@
-variable "yc_token" { type = string; description = "OAuth token или service account key" }
-variable "yc_cloud_id" { type = string }
-variable "yc_folder_id" { type = string }
-variable "yc_zone" { type = string; default = "ru-central1-a" }
+variable "yc_token" {
+  description = "OAuth token или service account key" 
+  type = string
+  default = null
+}
+variable "yc_cloud_id" {
+  type = string
+}
+variable "yc_folder_id" {
+  type = string 
+}
+variable "yc_zone" {
+  type = string
+  default = "ru-central1-a"
+}
 
-variable "ssh_public_key" { type = string; description = "Путь к публичному SSH ключу" }
+variable "ssh_public_key" {
+  type = string
+  description = "Путь к публичному SSH ключу"
+}
 
 # Параметры ВМ
 variable "monitoring_vm" { 
